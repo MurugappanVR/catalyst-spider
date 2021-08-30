@@ -1,0 +1,9 @@
+{
+	"name": "event_function",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "murugappan.vr@zohocorp.com",
+	"dependencies": {
+		"zcatalyst-sdk-node": "latest"
+	}
+}

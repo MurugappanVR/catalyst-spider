@@ -1,0 +1,29 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "380000000049001",
+      "name": "Spider-As-A-Service",
+      "domain": {
+        "id": 10031889637,
+        "name": "spider-as-a-service-687866769.development"
+      },
+      "env": [
+        {
+          "idx": 1,
+          "id": "687866769",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+	"name": "ig_cron",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "murugappan.vr@zohocorp.com",
+	"dependencies": {
+		"scraper-instagram": "^1.0.17",
+		"zcatalyst-sdk-node": "latest"
+	}
+}

@@ -1,0 +1,210 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Zoho Catalyst Spider</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/slicknav.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/css/themify-icons.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!-- #7a99ff,#ff8a7a -->
+  <!-- #9ecbff,#ffc99e -->
+  <!-- #FF9100,#0084ff -->
+  <header>
+    <div id="header"></div>
+  </header>
+  <main>
+    <div class="slider-area hero-height2">
+        <div class="slider-active">
+        <div class="single-slider">
+        <div class="slider-cap-wrapper">
+        <div class="hero-caption hero-caption2">
+        <h2 data-animation="fadeInUp" data-delay=".2s">Catalyst Architecture</h2>
+        <p data-animation="fadeInUp" data-delay=".6s">Please forgive the design flaws.</p>
+        </div>
+        <div class="hero-img hero-img2 position-relative">
+        <img src="assets/img/illustrations/about_us.svg" alt="" data-animation="fadeInRight" data-transition-duration="5s">
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    
+    <section class="about-area mt-40">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-xl-7 col-lg-5 col-md-11">
+              <div class="support-location-img">
+                <img src="assets/img/architechture/ecommerce.png" alt="">
+              </div>
+            </div>
+            <div class="col-xl-5 col-lg-7 col-md-10">
+              <div class="right-caption">
+  
+                <div class="about-tittle">
+                  <h2>Ecommerce Spider</h2>
+                </div>
+                <div class="support-caption">
+                    <p class="pera-top">
+                        There 2 work flows where user ,
+                        <ul class="unordered-list">
+                            <li>Normal workflow of scrapping the data by keyword,limit,location etc</li>
+                            <li>Alerting and scheduling based on the data of product by their id</li>
+                        </ul>
+                        <h3 class="mt-30">Normal workflow of scrapping the data by keyword,limit,location etc</h3>
+                        When the user scrapes the product by entering the keyword we display the result on the 
+                        client as well as perform text sentiment analysis on the keyword searched . If the 
+                        keyword is not harsh and good . we store it in cache for a period of 6hrs so when
+                        someone requests same keyword . It is fetched from the cache instead of crawling that 
+                        keyword again
+                        <h3 class="mt-30">Alerting and scheduling based on the data of product by their id</h3>
+                        User adds the product ID (ASIN number in case for amazon)
+                        Meta Data are stored in ecommerce table and a cron job
+                        is initiated which periodically crawls the product & scraps the pricing data.
+                        This data is stored in pricing_history table . When the price breaches the
+                        threshold configured the user we store it in alerts_table . when there is a new entry
+                        in alerts_table . A alert is triggered to the user using the event_handler function.
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center mt-50">
+            <div class="col-xl-7 col-lg-5 col-md-11">
+              <div class="support-location-img">
+                <img src="assets/img/architechture/socialmedia.png" alt="">
+              </div>
+            </div>
+            <div class="col-xl-5 col-lg-7 col-md-10">
+              <div class="right-caption">
+  
+                <div class="about-tittle">
+                  <h2>Social Media Spider</h2>
+                </div>
+                <div class="support-caption">
+                    <p class="pera-top">
+                        There 2 work flows where user ,
+                        <ul class="unordered-list">
+                            <li>Normal workflow of scrapping the instagram by hashtag or userids etc</li>
+                            <li>Alerting and scheduling based on the followers|post data of a account by their id</li>
+                        </ul>
+                        <h3 class="mt-30">Normal workflow of scrapping the data by hashtag or userids</h3>
+                        When the user scrapes the instagram by entering the keyword we display the result on the 
+                        client as well as perform image moderation on the keyword searched . If the 
+                        image is not harsh and good . It is fetched from the cache instead of crawling that 
+                        keyword again
+                        <h3 class="mt-30">Alerting and scheduling based on the data of a account by their id</h3>
+                        User adds the username
+                        Meta Data are stored in socialmedia table and a cron job
+                        is initiated which periodically crawls the user & crawls the followers data.
+                        This data is stored in socialtrends_history table . When the price breaches the
+                        threshold configured the user we store it in alerts_table . when there is a new entry
+                        in alerts_table . A alert is triggered to the user using the event_handler function.
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center mt-50">
+            <div class="col-xl-7 col-lg-5 col-md-11">
+              <div class="support-location-img">
+                <img src="assets/img/architechture/webpagecrawl.png" alt="">
+              </div>
+            </div>
+            <div class="col-xl-5 col-lg-7 col-md-10">
+              <div class="right-caption">
+  
+                <div class="about-tittle">
+                  <h2>Web Spider</h2>
+                </div>
+                <div class="support-caption">
+                    <p class="pera-top">
+                        Simple spider which crawls the webpage
+                        and selects the queryElement to be
+                        scraped and returns the data.
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-xl-7 col-lg-5 col-md-11">
+              <div class="support-location-img">
+                <img src="assets/img/architechture/BotDetectorFlow.png" alt="">
+              </div>
+            </div>
+            <div class="col-xl-5 col-lg-7 col-md-10">
+              <div class="right-caption">
+  
+                <div class="about-tittle">
+                  <h2>Bot Detection Spider</h2>
+                </div>
+                <div class="support-caption">
+                    <p class="pera-top">
+                        Simple lamda which detects the input useragent 
+                        and verifies if it is a bot or not.
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    
+
+    
+    
+  </main>
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+  <div id="back-top">
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+  </div>
+
+
+  <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+  <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="./assets/js/popper.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+
+  <script src="./assets/js/owl.carousel.min.js"></script>
+  <script src="./assets/js/slick.min.js"></script>
+
+  <script src="./assets/js/wow.min.js"></script>
+  <script src="./assets/js/jquery.magnific-popup.js"></script>
+  <script src="./assets/js/jquery.slicknav.min.js"></script>
+  <script src="./assets/js/jquery.counterup.min.js"></script>
+  <script src="./assets/js/waypoints.min.js"></script>
+  <script src="./assets/js/jquery.nice-select.min.js"></script>
+  <script src="./assets/js/contact.js"></script>
+  <script src="./assets/js/jquery.form.js"></script>
+  <script src="./assets/js/jquery.validate.min.js"></script>
+  <script src="./assets/js/mail-script.js"></script>
+
+  <script src="./assets/js/plugins.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js" integrity="sha512-BB7rb8ZBAxtdJdB7nwDijJH9NC+648xSzviK9Itm+5APTtdpgKz1+82bDl4znz/FBhd0R7pJ/gQtomnMpZYzRw==" crossorigin="anonymous"></script>
+  <script src="./assets/js/main.js"></script>
+  <script type="text/javascript" src="./assets/js/floating-wpp.min.js"></script>
+  <link rel="stylesheet" href="./assets/js/floating-wpp.min.css">
+</body>
+
+</html>

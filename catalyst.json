@@ -1,0 +1,15 @@
+{
+  "functions": {
+    "targets": [
+      "spider_as_a_service_function",
+      "cron",
+      "ig_cron",
+      "event_function"
+    ],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "client"
+  }
+}

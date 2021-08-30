@@ -1,0 +1,10 @@
+{
+	"deployment": {
+		"name": "spider_as_a_service_function",
+		"stack": "node10",
+		"type": "advancedio"
+	},
+	"execution": {
+		"main": "index.js"
+	}
+}
