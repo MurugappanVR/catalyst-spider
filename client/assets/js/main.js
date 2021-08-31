@@ -249,6 +249,10 @@ $("#social-media-scrape-submit").click(function(){
   var type = "hash";
   if(search.startsWith('@')){
     type = "user";
+    search = search.substring(1);
+  }
+  else if(search.startsWith('#')){
+    search = search.substring(1);
   }
   if(!search){
     alert('enter all values');
@@ -258,22 +262,30 @@ $("#social-media-scrape-submit").click(function(){
       url: "/server/spider_as_a_service_function/scrape/ig",
       type: 'GET',
       data: { 
-        'query': search.substring(1), 
+        'query': search, 
         'type': type
       },
       success: function(data) {
         console.log(data);
-
-        //if(type=='user'){
+        var newUrl = "";
+        if(type=='user'){
+          newUrl="https://www.instagram.com/"+search;
+        }else{
+          newUrl="https://www.instagram.com/explore/tags/"+search;
+        }
           var txt = "";
-          txt="<a href='"+data.pic+"' target='_blank' style='color:blue'>Display Image</a><div><a href='"+data.link+"' target='_blank' style='color:blue'>"+data.name+"</a></div>"
+          txt="<a href='"+newUrl+"' target='_blank' style='color:blue'>"+search+"</a>";
           $("#social-media-scrape-user").append(txt);
-          var len = data.lastPosts.length;
+          var len = data.medias.length;
           txt = "";
           $("#social-media-scrape-user-table").find("tr:gt(0)").remove();
           if(len > 0){
               for(var i=0;i<len;i++){
-                txt += "<tr class='clickable-row' style='cursor:pointer' data-href=https://www.instagram.com/p/"+data.lastPosts[i].shortcode+"><td width='10%'><a href='"+data.lastPosts[i].thumbnail+"' target='_blank' style='color:blue'>thumbnail_link</a></td><td width='60%'>"+data.lastPosts[i].caption+"</td><td width='15%'>"+data.lastPosts[i].likes+"</td><td width='15%'>"+data.lastPosts[i].comments+"</td></tr>";
+                var caption = "-";
+                try{
+                  caption = data.medias[i].node.edge_media_to_caption.edges ? data.medias[i].node.edge_media_to_caption.edges[0].node.text : "";
+                }catch(e){}
+                txt += "<tr class='clickable-row' style='cursor:pointer' data-href=https://www.instagram.com/p/"+data.medias[i].node.shortcode+"><td width='10%'><a href='"+data.medias[i].node.thumbnail_src+"' target='_blank' style='color:blue'>thumbnail_link</a></td><td width='60%'>"+caption+"</td><td width='15%'>"+data.medias[i].node.edge_liked_by.count+"</td><td width='15%'>"+data.medias[i].node.edge_media_to_comment.count+"</td></tr>";
               }
               if(txt != ""){
                   $("#social-media-scrape-user-table").append(txt).removeClass("display-hidden");

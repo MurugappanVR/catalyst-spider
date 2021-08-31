@@ -3,7 +3,7 @@ var app = express();
 app.use(express.json()); // This supports the JSON encoded bodies
 var catalyst = require('zcatalyst-sdk-node');
 var amazon = require('./amazon.js');
-var ig = require('./instagram.js');
+var ig = require('./instagram_new.js');
 //var crawler = require('./web-crawler.js');
 var Crawler = require("crawler");
 var utils = require('./utils.js');

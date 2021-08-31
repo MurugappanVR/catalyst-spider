@@ -1,9 +1,13 @@
-const Insta = require('scraper-instagram');
+//faced authentication & too many requests in below package 
+//const Insta = require('scraper-instagram');
 const utils = require('./utils.js')
-const InstaClient = new Insta();
+//const InstaClient = new Insta();
+
+var ig = require('instagram-scraping');
+
 var self = {
 	scrapeTag : async function(hashTag){
-		let data = await InstaClient.getHashtag(hashTag)
+		let data = await ig.scrapeTag(hashTag)
 		.then(hashtagData => {
 			return hashtagData;
 		})
@@ -16,7 +20,7 @@ var self = {
 	},
 
 	scrapeUser : async function(username){
-		let data = await InstaClient.getProfile(username)
+		let data = await ig.scrapeUserPage(username)
 		.then(profile => profile)
 		.catch(err => err);
 		console.log("ig scrape user data is "+data);
